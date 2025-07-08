@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warnet Cipher - Gaming Hub Pontianak</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Loading indicator -->
+    <div class="page-loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="brand">
+    <a href="index.html" class="logo">
+        <img src="assets/images/logo.png" alt="Warnet Cipher">
+    </a>
+    <span class="brand-name neon-text">Warnet Cipher</span>
+</div>
+
+            <!-- Button Mobile -->
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+
+            <!-- Menu Links -->
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="facilities.html">Fasilitas</a></li>
+                <li><a href="pricing.html">Harga</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Warnet Cipher</h1>
+            <p>Gaming & Produktivitas Terbaik di Pontianak</p>
+            <a href="pricing.html" class="cta-button">Lihat Paket</a>
+        </div>
+    </section>
+
+<!-- Poin Exchange Section -->
+<section id="poin-exchange" class="feature-section py-24 bg-gray-900 text-white" data-animate="fade-up">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">Poin Exchange</h2>
+    <p class="max-w-2xl mx-auto text-lg leading-relaxed">
+      Setiap kunjungan dan layanan di Warnet Cipher akan memberikan poin yang dapat Anda tukar untuk berbagai reward menarik seperti diskon waktu bermain, minuman gratis, atau bonus lainnya. Ini adalah cara sederhana untuk mengapresiasi pelanggan setia dan mempererat ikatan—karena mendapatkan poin itu terasa menyenangkan dan mudah diingat.
+    </p>
+  </div>
+</section>
+
+<!-- Cara Kerja -->
+<section id="cara-kerja" class="feature-section py-24 bg-gray-800 text-white" data-animate="fade-up">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">Cara Kerja</h2>
+    <p class="max-w-2xl mx-auto text-lg leading-relaxed">
+      1️⃣ Kumpulkan poin setiap kali Anda menggunakan layanan atau membeli paket gaming/print.<br>
+      2️⃣ Kunjungi halaman “Tukar Poin” kami untuk menukar poin yang sudah terkumpul.<br>
+      3️⃣ Nikmati keuntungan tanpa harus menukar untuk reward tertentu—cukup gunakan poin sesuai kebutuhan Anda!
+    </p>
+  </div>
+</section>
+
+<!-- Cek Poin Saya -->
+<section id="cek-poin" class="feature-section py-24 bg-gray-900 text-white" data-animate="fade-up">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">Cek Poin Saya</h2>
+    <p class="max-w-2xl mx-auto text-lg leading-relaxed">
+      Gunakan fitur “Cek Poin” di situs atau aplikasi kami untuk melihat saldo poin Anda secara langsung dan real-time.  
+      Tidak perlu menebak—Anda bisa tahu berapa poin yang sudah dikumpulkan, sehingga siap dipakai saat Anda mau!
+    </p>
+  </div>
+</section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/main.js">
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+
+
+        // Highlight link sesuai halaman
+        const currentPage = window.location.pathname.split("/").pop();
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+            }
+        });
+</script>
+</body>
+</html>
