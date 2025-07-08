@@ -14,23 +14,7 @@
         <div class="spinner"></div>
     </div>
 
-    <nav>
-        <div class="container">
-            <div class="brand">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Warnet Cipher">
-            </a>
-            <span class="brand-name neon-text">Warnet Cipher</span>
-        </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="about.html">Tentang Kami</a></li>
-                <li><a href="facilities.html">Fasilitas</a></li>
-                <li><a href="pricing.html" class="active">Harga</a></li>
-                <li><a href="contact.html">Kontak</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div id="navbar-placeholder"></div> 
 
     <main class="container">
         <section class="pricing-intro">
@@ -110,35 +94,37 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Warnet Cipher</h3>
-                    <p>Gaming & Productivity Hub Terbaik di Pontianak</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Jam Operasional</h3>
-                    <p>Senin-Jumat: 09.00 - 22.00</p>
-                    <p>Sabtu-Minggu: 08.00 - 23.00</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Hubungi Kami</h3>
-                    <p><i class="fas fa-phone"></i> (0561) 1234567</p>
-                    <p><i class="fas fa-envelope"></i> info@warnetcipher.com</p>
-                </div>
-            </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Warnet Cipher. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+<div id="footer-placeholder"></div>
 
-    <script src="assets/js/main.js"></script>
+    <!-- Main script -->
+<script src="assets/js/main.js"></script>
+
+<!-- Load Navbar dan Footer -->
+<script>
+  // Load Navbar
+  fetch('navbar.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+    });
+
+  // Load Footer
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+
+  // Highlight current page link
+  const currentPage = window.location.pathname.split("/").pop();
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
