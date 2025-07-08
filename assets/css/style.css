@@ -669,10 +669,33 @@ footer {
 .social-links a:hover {
   color: #1DA1F2; /* default blue hover */
 }
+.btn-konfirmasi {
+  background-color: #10b981;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.btn-konfirmasi:hover {
+  background-color: #059669;
+}
 
-
-
-
+.btn-konfirmasi {
+  background-color: #10b981;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.btn-konfirmasi:hover {
+  background-color: #059669;
+}
 
 }
 }
