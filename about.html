@@ -48,13 +48,23 @@
     <!-- Main script -->
 <script src="assets/js/main.js"></script>
 
-<!-- Load Navbar dan Footer -->
 <script>
+  // Fungsi untuk menandai link aktif
+  function highlightActiveLink() {
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  }
+
   // Load Navbar
   fetch('navbar.html')
     .then(res => res.text())
     .then(data => {
       document.getElementById('navbar-placeholder').innerHTML = data;
+      highlightActiveLink(); // <- Panggil setelah navbar selesai dimuat
     });
 
   // Load Footer
@@ -63,17 +73,8 @@
     .then(data => {
       document.getElementById('footer-placeholder').innerHTML = data;
     });
-
-  // Highlight current page link
-  const currentPage = window.location.pathname.split("/").pop();
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      if (link.getAttribute("href") === currentPage) {
-        link.classList.add("active");
-      }
-    });
-  });
 </script>
+
 
 </body>
 </html>
