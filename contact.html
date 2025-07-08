@@ -127,29 +127,10 @@
       document.getElementById('footer-placeholder').innerHTML = data;
     });
 </script>
-
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("-_uyHSR9srkgLbgNd"); // Ganti dengan public key dari EmailJS
-  })();
-
-  document.getElementById('confirmBtn').addEventListener('click', function() {
-    emailjs.send("service_zgq0ktb", "template_5x1clqq", {
-      nama_dosen: "Dosen Penguji",  // opsional
-      konfirmasi: "Website Warnet Cipher telah diverifikasi."
-    }).then(function(response) {
-      alert("✅ Terima kasih! Konfirmasi telah dikirim.");
-    }, function(error) {
-      alert("❌ Gagal mengirim. Silakan coba lagi.");
-    });
-  });
-</script>
-
 <script type="module">
   import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
 
-  emailjs.init('-_uyHSR9srkgLbgNd');
+  emailjs.init('jmABh4CAo4oTFSC29');
 
   document.getElementById('confirmBtn').addEventListener('click', () => {
     emailjs.send("service_zgq0ktb", "template_001woss", {
