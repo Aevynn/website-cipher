@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div id="popup" class="popup">
-  ✅ Website berhasil dikonfirmasi oleh dosen.
-</div>
+
 
     <!-- Loading indicator -->
     <div class="page-loader">
@@ -115,19 +113,6 @@
       }
     });
   }
-const confirmBtn = document.getElementById('confirmBtn');
-  const popup = document.getElementById('popup');
-
-  if (confirmBtn && popup) {
-    confirmBtn.addEventListener('click', function () {
-      popup.style.display = 'block';
-
-      // Hilangkan popup setelah 3 detik
-      setTimeout(() => {
-        popup.style.display = 'none';
-      }, 3000);
-    });
-  }
   // Load Navbar
   fetch('navbar.html')
     .then(res => res.text())
@@ -144,5 +129,24 @@ const confirmBtn = document.getElementById('confirmBtn');
     });
 </script>
 
+<script>
+  const confirmBtn = document.getElementById('confirmBtn');
+  const popup = document.getElementById('popup');
+
+  if (confirmBtn && popup) {
+    confirmBtn.addEventListener('click', function () {
+      popup.style.display = 'block';
+
+      // Redirect setelah 2 detik
+      setTimeout(() => {
+        popup.style.display = 'none';
+        window.location.href = 'index.html';
+      }, 2000);
+    });
+  }
+</script>
+div id="popup" class="popup">
+  ✅ Website berhasil dikonfirmasi oleh dosen.
+</div>
 </body>
 </html>
