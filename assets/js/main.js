@@ -63,17 +63,19 @@ document.addEventListener('DOMContentLoaded', function () {
   const animatedSections = document.querySelectorAll('.feature-section');
 
   function animateOnScroll() {
-    animatedSections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      if (!section.classList.contains('animate-fade-up') && rect.top < window.innerHeight - 100) {
-        const type = section.dataset.animate || "fade-up";
-        section.classList.add(`animate-${type}`);
-      }
-    });
-  }
+  animatedSections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (!section.classList.contains('animate-fade-up') && rect.top < window.innerHeight - 100) {
+      const type = section.dataset.animate || "fade-up";
+      section.classList.add(`animate-${type}`);
+    }
+  });
+}
 
-  window.addEventListener('scroll', animateOnScroll);
+  window.addEventListener('scroll', () => {
+  hasScrolled = true;
   animateOnScroll();
+});
 
   // ======== LAUNCH POPUP ========
   const popup = document.getElementById('launch-popup');
