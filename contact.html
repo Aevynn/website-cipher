@@ -146,6 +146,23 @@
   });
 </script>
 
+<script type="module">
+  import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+
+  emailjs.init('-_uyHSR9srkgLbgNd');
+
+  document.getElementById('confirmBtn').addEventListener('click', () => {
+    emailjs.send("service_zgq0ktb", "template_001woss", {
+      konfirmasi: "Website sudah dicek oleh dosen."
+    }).then(() => {
+      alert("✅ Konfirmasi terkirim!");
+    }, () => {
+      alert("❌ Gagal mengirim konfirmasi.");
+    });
+  });
+</script>
+
+
 
 </body>
 </html>
