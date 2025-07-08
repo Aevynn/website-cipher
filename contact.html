@@ -81,6 +81,10 @@
                     <button type="submit" class="cta-button">
                         <i class="fas fa-paper-plane"></i> Kirim Pesan
                     </button>
+                    <button id="confirmBtn" type="button" class="btn-konfirmasi">
+  Konfirmasi Telah Dicek oleh Dosen
+</button>
+
                 </form>
             </section>
         </div>
@@ -123,6 +127,20 @@
     .then(data => {
       document.getElementById('footer-placeholder').innerHTML = data;
     });
+    (function(){
+    emailjs.init("-_uyHSR9srkgLbgNd"); // Ganti dengan public key dari EmailJS
+  })();
+
+  document.getElementById('confirmBtn').addEventListener('click', function() {
+    emailjs.send("service_zgq0ktb", "template_lqng7mn", {
+      nama_dosen: "Pak Irawan Wingdes",  // opsional
+      konfirmasi: "Website Warnet Cipher telah diverifikasi."
+    }).then(function(response) {
+      alert("✅ Terima kasih! Konfirmasi telah dikirim.");
+    }, function(error) {
+      alert("❌ Gagal mengirim. Silakan coba lagi.");
+    });
+  });
 </script>
 
 
