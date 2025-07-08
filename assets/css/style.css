@@ -270,6 +270,18 @@ nav a.active::after {
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
+.popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #10b981;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 999;
+}
 
 .form-group {
     margin-bottom: 1.5rem;

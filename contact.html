@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div id="popup" class="popup">
+  ✅ Website berhasil dikonfirmasi oleh dosen.
+</div>
+
     <!-- Loading indicator -->
     <div class="page-loader">
         <div class="spinner"></div>
@@ -111,7 +115,19 @@
       }
     });
   }
+const confirmBtn = document.getElementById('confirmBtn');
+  const popup = document.getElementById('popup');
 
+  if (confirmBtn && popup) {
+    confirmBtn.addEventListener('click', function () {
+      popup.style.display = 'block';
+
+      // Hilangkan popup setelah 3 detik
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 3000);
+    });
+  }
   // Load Navbar
   fetch('navbar.html')
     .then(res => res.text())
@@ -127,23 +143,6 @@
       document.getElementById('footer-placeholder').innerHTML = data;
     });
 </script>
-<script type="module">
-  import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-
-  emailjs.init('jmABh4CAo4oTFSC29');
-
-  document.getElementById('confirmBtn').addEventListener('click', () => {
-    emailjs.send("service_zgq0ktb", "template_001woss", {
-      konfirmasi: "Website sudah dicek oleh dosen."
-    }).then(() => {
-      alert("✅ Konfirmasi terkirim!");
-    }, () => {
-      alert("❌ Gagal mengirim konfirmasi.");
-    });
-  });
-</script>
-
-
 
 </body>
 </html>
